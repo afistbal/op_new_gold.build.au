@@ -1,11 +1,11 @@
 ;(function (win) {
   // 统一域名配置
   var cfg = {
-    // 埃及 Vue 同源：ieg / upeg
-    base_url: 'https://ieg.yano777.com',
-    base_url_two: 'https://ieg.yano777.com/',
-    chat_base_url: 'wss://wsseg.yano777.com',
-    upload_base_url: 'https://upeg.yano777.com'
+    // AE Vue 同源：iae / upae
+    base_url: 'https://iae.yano777.com',
+    base_url_two: 'https://iae.yano777.com/',
+    chat_base_url: 'wss://wssae.yano777.com',
+    upload_base_url: 'https://upae.yano777.com'
   };
 
   // 暴露全局对象，方便 JS 里访问

@@ -8,7 +8,7 @@ const csso = require('csso');
 // 源码统一使用 op_new 这一套，打包时按环境输出到不同目标目录（埃及黑金）
 const ROOT = path.resolve(__dirname, '..'); // D:\JJ-game
 const SRC_ROOT = path.join(__dirname, 'op_new'); // D:\JJ-game\op_new_gold.build.eg\op_new
-const DEST_ROOT = path.join(ROOT, 'lot.eg.www'); // D:\JJ-game\lot.eg.www
+const DEST_ROOT = path.join(ROOT, 'lot.ae.www'); // D:\JJ-game\lot.ae.www
 
 // 运行模式：dev / prod / all（默认 dev）
 const MODE = process.argv[2] || 'dev';
@@ -100,7 +100,7 @@ async function copyAndMinifyFolder(targetFolder, envType) {
     if (MODE === 'dev') {
       await copyAndMinifyFolder('op_new.dev', 'dev');
     } else if (MODE === 'prod') {
-      // prod 环境打包到 D:\JJ-game\lot.eg.www\wap.prod.eg\op_new\gold
+      // prod 环境打包到 D:\JJ-game\lot.ae.www\op_new\gold
       await copyAndMinifyFolder(path.join('op_new', 'gold'), 'prod');
     } else {
       // all 或未识别：两个都打
