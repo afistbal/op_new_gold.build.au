@@ -97,11 +97,11 @@
   }
 
   function defaultGetAbbr() {
-    if (typeof window === 'undefined') return 'EG';
+    if (typeof window === 'undefined') return 'AE';
     try {
-      return localStorage.getItem('op_abbr') || 'EG';
+      return localStorage.getItem('op_abbr') || 'AE';
     } catch (e) {
-      return 'EG';
+      return 'AE';
     }
   }
 
