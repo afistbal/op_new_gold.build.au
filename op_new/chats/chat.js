@@ -1,18 +1,4 @@
 (function() {
-    function updateChatViewportHeight() {
-        const viewportHeight = (window.visualViewport && window.visualViewport.height) ||
-            document.documentElement.clientHeight;
-        if (viewportHeight > 0) {
-            document.documentElement.style.setProperty('--chat-viewport-height', viewportHeight + 'px');
-        }
-    }
-
-    updateChatViewportHeight();
-    window.addEventListener('resize', updateChatViewportHeight);
-    if (window.visualViewport) {
-        window.visualViewport.addEventListener('resize', updateChatViewportHeight);
-    }
-
     const chatConfig = {
         // 对应 chat_base_url
         chatBaseUrl: (window.envConfig && envConfig.chat_base_url) || (typeof chat_base_url !== 'undefined' && chat_base_url) || '',
