@@ -35,6 +35,9 @@ body::-webkit-scrollbar {
 .page-chat {
     width: 100%;
     height: 100vh;
+    /* H5 浏览器的 100vh 可能包含地址栏，使用动态视口保证首屏可见 */
+    height: var(--chat-viewport-height, 100dvh);
+    min-height: 0;
     padding: 5px;
     display: flex;
     flex-direction: column;
@@ -77,6 +80,7 @@ body::-webkit-scrollbar {
 .row-content-box {
     max-width: 425px;
     flex: 1;
+    min-height: 0;
     overflow-y: auto;
     padding: 10px;
     padding-bottom: 0;
@@ -269,9 +273,10 @@ body::-webkit-scrollbar {
     max-width: 425px;
     min-height: 50px;
     width: 100%;
+    flex: 0 0 auto;
     background-color: #2F3547;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 10px;
+    padding: 10px 10px calc(10px + env(safe-area-inset-bottom));
 }
 
 
