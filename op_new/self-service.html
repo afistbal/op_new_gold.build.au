@@ -15,7 +15,7 @@
   <script src="./js/iframeParamsDecrypt.js"></script>
   <script src="./js/iframeSession.js"></script>
   <script src="./js/encryptedRequest.js"></script>
-  <script>
+  <script data-cfasync="false">
     function IsPhone() {
       var info = navigator.userAgent;
       return /mobile/i.test(info);
@@ -43,9 +43,17 @@
       box-sizing: border-box;
     }
 
+    html {
+      /* 首屏先提供稳定根字号，避免 Cloudflare 延迟脚本时 rem 区域先塌陷 */
+      font-size: 54px;
+    }
+
+    body {
+      font-size: 0.28rem;
+    }
+
     body,
     html {
-      font-size: 0.28rem;
       font-family: "Roboto", "Inter", -apple-system, BlinkMacSystemFont,
         "Helvetica Neue", Helvetica, Segoe UI, Arial, "PingFang SC", miui,
         "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
@@ -217,7 +225,7 @@
 <body>
   <div class="page-self-service">
     <div class="bg-img">
-      <img src="./images/self_service/service_bg_img.png" alt="bg">
+      <img src="./images/self_service/service_bg_img.png" alt="bg" width="750" height="330">
     </div>
     <div class="self-service">
       <div class="self-service-title" id="selfServiceTitle">Self Service</div>
