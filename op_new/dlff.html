@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0,width=device-width,viewport-fit=cover">
   <meta name="format-detection" content="telephone=no">
-  <title>تحميل التطبيق</title>
+  <title>Download App</title>
   <link rel="icon" type="image/png" href="./images/icon.png">
   <script src="./js/env.js"></script>
   <script>
@@ -281,11 +281,11 @@
         <div class="download-box__logo-box">
           <div class="code-box" id="codeBox" style="display: none;">
             <h2 class="code" id="inviteCode"></h2>
-            <p class="code-tit" id="inviteCodeTitle">رمز الدعوة</p>
+            <p class="code-tit" id="inviteCodeTitle">Invitation Code</p>
           </div>
         </div>
         <div class="download-box__download-box">
-          <div id="downloadBtn">تحميل</div>
+          <div id="downloadBtn">Download</div>
         </div>
       </div>
       <div class="main">
@@ -324,7 +324,7 @@
 
         if (navigator.clipboard && navigator.clipboard.writeText) {
           navigator.clipboard.writeText(code).then(() => {
-            showToast('تم نسخ رمز الدعوة بنجاح!');
+            showToast('Invitation code copied successfully!');
           }).catch(() => {
             fallbackCopyCode(code);
           });
@@ -342,9 +342,9 @@
         textArea.select();
         try {
           document.execCommand('copy');
-          showToast('تم نسخ رمز الدعوة بنجاح!');
+          showToast('Invitation code copied successfully!');
         } catch (err) {
-          showToast('فشل نسخ رمز الدعوة!');
+          showToast('Failed to copy invitation code.');
         }
         document.body.removeChild(textArea);
       }
@@ -355,17 +355,17 @@
           copyCode();
         }
 
-        // EG 走 APK 下载
+        // AU APK download
         const apkName = getUrlParam('apkName') || 'base';
         const urlApkHost = getUrlParam('apkHost');
         const finalApkHost = urlApkHost || apkHost;
 
         if (!finalApkHost) {
-          showToast('عنوان التحميل غير متوفر');
+          showToast('Download address is unavailable.');
           return;
         }
 
-        const url = finalApkHost + '/apkae/' + apkName + '.apk';
+        const url = finalApkHost + '/apkau/' + apkName + '.apk';
 
         if (url) {
           setTimeout(function() {
@@ -376,7 +376,7 @@
 
       function init() {
         const app_in_code = getUrlParam('app_in_code');
-        const lang = getUrlParam('lang') || 'ar';
+        const lang = 'en';
 
         if (app_in_code) {
           document.getElementById('inviteCode').textContent = app_in_code;
@@ -387,7 +387,7 @@
             'ar': 'رمز الدعوة',
             'hi': 'आमंत्रण कोड'
           };
-          document.getElementById('inviteCodeTitle').textContent = titles[lang] || titles['ar'];
+          document.getElementById('inviteCodeTitle').textContent = titles[lang] || titles['en'];
         }
 
         const downloadTexts = {
@@ -395,7 +395,7 @@
           'ar': 'تحميل',
           'hi': 'डाउनलोड'
         };
-        document.getElementById('downloadBtn').textContent = downloadTexts[lang] || downloadTexts['ar'];
+        document.getElementById('downloadBtn').textContent = downloadTexts[lang] || downloadTexts['en'];
 
         document.getElementById('titleImg').style.backgroundImage = 'url(./appicon/title.png)';
         document.getElementById('appImg').style.backgroundImage = 'url(./appicon/app.png?v1)';

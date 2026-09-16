@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="./images/icon.png">
-    <title>تفاصيل النشاط</title>
+    <title>Activity Details</title>
     <style>
         * {
             padding: 0;
@@ -78,7 +78,7 @@
 <body>
     <!-- <div id="app"></div> -->
     <div class="container">
-        <img class="top-img" id="top-img" src="./images/activity/other-05-ae.png" alt="">
+        <img class="top-img" id="top-img" src="./images/activity/other-05.png" alt="">
         <div class="content">
             <div class="title" id="title">YANO 777 Official Channel</div>
             <div class="click-text">
@@ -125,6 +125,7 @@
          * 白名单：en, hi（可自行扩展）
          * ------------------------- */
         function getAppLanguage() {
+            return "en";
             var appLanguage = null;
             try {
                 appLanguage = window.GLJsBridge.getLanguage(); // 原生容器提供

@@ -189,6 +189,8 @@
       return IframeSession.getUrlParam(name);
     }
     function getLang() {
+      // AU is English-only; legacy language detection below is intentionally retained.
+      return 'en';
       if (window.GLJsBridge && typeof window.GLJsBridge.getLanguage === 'function') {
         try {
           const appLang = window.GLJsBridge.getLanguage();

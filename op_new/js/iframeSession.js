@@ -70,6 +70,8 @@
   }
 
   function getLang() {
+    // AU is English-only; legacy language detection below is intentionally retained.
+    return 'en';
     if (global.GLJsBridge && typeof global.GLJsBridge.getLanguage === 'function') {
       try {
         var appLang = global.GLJsBridge.getLanguage();

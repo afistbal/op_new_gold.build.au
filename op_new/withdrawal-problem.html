@@ -368,6 +368,8 @@
          * 白名单：en, hi（可自行扩展）
          * ------------------------- */
         function getAppLanguage() {
+            // AU is English-only; legacy language detection below is intentionally retained.
+            return "en";
             var appLanguage = null;
             try {
                 appLanguage = window.GLJsBridge.getLanguage(); // 原生容器提供
@@ -422,7 +424,7 @@
                 formData.append("chunks", 1);
 
                 const xhr = new XMLHttpRequest();
-                xhr.open("POST", "https://upae.yano777.com/user/file/chunk");
+                xhr.open("POST", "https://upau.yano777.com/user/file/chunk");
 
                 xhr.upload.onprogress = function (event) {
                     if (event.lengthComputable) {
@@ -581,8 +583,8 @@
             }
 
             // fetch('https://testh5api.lucky777vip.cc/user/issue/add', {
-            // fetch('https://testh5api.lucky777vip.cc/user/issue/plane', { 2025-11-10 调整改为 https://iae.yano777.com/user/issue/plane
-            fetch('https://iae.yano777.com/user/issue/plane', {
+            // fetch('https://testh5api.lucky777vip.cc/user/issue/plane', { 2025-11-10 调整改为 https://iau.yano777.com/user/issue/plane
+            fetch('https://iau.yano777.com/user/issue/plane', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

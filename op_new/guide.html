@@ -92,6 +92,8 @@
          * 白名单：en, hi, ar（可扩展）
          * ------------------------- */
         function getAppLanguage() {
+            // AU is English-only; legacy language detection below is intentionally retained.
+            return "en";
             var appLanguage = null;
             try {
                 appLanguage = window.GLJsBridge.getLanguage(); // 原生容器提供

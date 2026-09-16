@@ -34,6 +34,8 @@
     }
 
     function getLang() {
+        // AU is English-only; legacy language detection below is intentionally retained.
+        return 'en';
         // 语言策略：只有 EN 用英文，其它全部按 AR 处理
         let lang = null;
         if (window.EGMirror && typeof window.EGMirror.detectLang === 'function') {

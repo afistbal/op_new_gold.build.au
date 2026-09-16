@@ -1,10 +1,10 @@
 ;(function (win) {
   // 测试环境配置
   var cfg = {
-    base_url: 'https://iae.yano777.com',
-    base_url_two: 'https://iae.yano777.com/',
-    chat_base_url: 'wss://wssae.yano777.com',
-    upload_base_url: 'https://upae.yano777.com'
+    base_url: 'https://iau.yano777.com',
+    base_url_two: 'https://iau.yano777.com/',
+    chat_base_url: 'wss://wssau.yano777.com',
+    upload_base_url: 'https://upau.yano777.com'
   };
 
   win.envConfig = cfg;

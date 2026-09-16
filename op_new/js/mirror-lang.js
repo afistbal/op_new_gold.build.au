@@ -21,6 +21,8 @@
   // 统一语言检测（与 self-service 等页一致）：App > URL ?lang= > localStorage op_lang > 默认 ar
   // 有 App 或 URL 时回写 localStorage，保证各页打开时“一个语言就足够”
   function detectLang() {
+    // AU is English-only; legacy language/mirror code below is intentionally retained.
+    return 'en'
     var resolved = null
     var source = null
 

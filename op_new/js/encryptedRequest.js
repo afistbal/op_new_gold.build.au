@@ -58,6 +58,8 @@
   }
 
   function defaultGetLang() {
+    // AU is English-only; legacy language detection below is intentionally retained.
+    return 'en';
     if (typeof window === 'undefined') return 'en';
     if (window.GLJsBridge && typeof window.GLJsBridge.getLanguage === 'function') {
       try {
@@ -97,11 +99,11 @@
   }
 
   function defaultGetAbbr() {
-    if (typeof window === 'undefined') return 'AE';
+    if (typeof window === 'undefined') return 'AU';
     try {
-      return localStorage.getItem('op_abbr') || 'AE';
+      return localStorage.getItem('op_abbr') || 'AU';
     } catch (e) {
-      return 'AE';
+      return 'AU';
     }
   }
 

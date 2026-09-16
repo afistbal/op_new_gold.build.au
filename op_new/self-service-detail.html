@@ -303,6 +303,8 @@
       return IframeSession.getUrlParam(name);
     }
     function getLang() {
+      // AU is English-only; legacy language detection below is intentionally retained.
+      return 'en';
       if (window.GLJsBridge && typeof window.GLJsBridge.getLanguage === 'function') {
         try {
           const appLang = window.GLJsBridge.getLanguage();
@@ -597,7 +599,7 @@
         fd.append('file', file);
         // 统一场景标记
         fd.append('scene', 'gold');
-        fetch('https://upae.yano777.com/user/file/image', {
+        fetch('https://upau.yano777.com/user/file/image', {
           method: 'POST',
           headers: { 'authorization': getToken() || '' },
           body: fd
