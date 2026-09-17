@@ -23,7 +23,12 @@ async function copyAndMinifyFolder(targetFolder, envType) {
 
   // 强覆盖目录：先清空目标目录，再复制整个源码目录
   await fs.emptyDir(destDir);
-  await fs.copy(srcDir, destDir);
+  await fs.copy(srcDir, destDir, {
+    filter: (src) => {
+      const relative = path.relative(srcDir, src);
+      return relative !== 'del' && !relative.startsWith(`del${path.sep}`);
+    },
+  });
   console.log(`已强覆盖复制到 ${targetFolder}`);
 
   // 根据环境覆盖 env.js

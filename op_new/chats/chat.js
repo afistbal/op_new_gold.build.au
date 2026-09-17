@@ -307,8 +307,8 @@
 
             if (this.welcomeTimes === 0) {
                 const now = new Date();
-                const indiaTime = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }));
-                const hour = indiaTime.getHours();
+                const sydneyTime = new Date(now.toLocaleString('en-US', { timeZone: 'Australia/Sydney' }));
+                const hour = sydneyTime.getHours();
                 if (hour >= 23 || hour < 8) {
                     this.addMessage({
                         position: 'left',

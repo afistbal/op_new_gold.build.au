@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0,width=device-width,viewport-fit=cover">
@@ -9,7 +9,7 @@
   <script src="./js/env.js"></script>
   <script>
     // APK 下载域名：不再调用 /user/gdUser/judAuditVersion，直接走固定配置
-    window.__apkHost = 'https://dwae.gogdownload.com';
+    window.__apkHost = '';
   </script>
   <script>
     function IsPhone() {
@@ -96,7 +96,7 @@
       outline: none;
     }
 
-    /* EG 镜像 RTL 样式（黑金底 + 保留 RTL） */
+    /* AU English LTR style */
     .download {
       max-width: 425px;
       padding-top: 3.8em;
@@ -106,7 +106,7 @@
       overflow-y: auto;
       scrollbar-width: none;
       -ms-overflow-style: none;
-      direction: rtl;
+      direction: ltr;
     }
 
     .download::-webkit-scrollbar {
@@ -118,7 +118,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-direction: row-reverse;
+      flex-direction: row;
       position: fixed;
       left: 50%;
       transform: translateX(-50%);
@@ -129,7 +129,7 @@
       height: 1.2rem;
       padding: 0 0.2rem;
       background-color: transparent;
-      direction: rtl;
+      direction: ltr;
     }
 
     .download-box__logo-box {
@@ -170,7 +170,7 @@
     .main {
       height: 94vh;
       position: relative;
-      direction: rtl;
+      direction: ltr;
     }
 
     .title {
@@ -200,8 +200,8 @@
       background-size: 100% 100%;
       position: absolute;
       bottom: 0;
-      right: auto;
-      left: 0;
+      right: 0;
+      left: auto;
     }
 
     .footer {
