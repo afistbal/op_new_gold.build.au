@@ -8,8 +8,8 @@
   <link rel="icon" type="image/png" href="./images/icon.png">
   <script src="./js/env.js"></script>
   <script>
-    // APK 下载域名：不再调用 /user/gdUser/judAuditVersion，直接走固定配置
-    window.__apkHost = 'https://dwau.gogdownload.com';
+    // AU 落地页固定下载指定安装包，不依赖接口或 URL 参数。
+    window.__apkDownloadUrl = 'https://dwau.gogdownload.com/apkau/com.yano777.ninetythree-gg.apk';
   </script>
   <script>
     function IsPhone() {
@@ -301,9 +301,6 @@
 
   <script>
     (function() {
-      // apkHost 固定来源（优先读取 env.js 写入的 window.__apkHost）
-      let apkHost = window.__apkHost;
-
       function getUrlParam(name) {
         const urlParams = new URLSearchParams(window.location.search);
         return urlParams.get(name) || '';
@@ -355,17 +352,11 @@
           copyCode();
         }
 
-        // AU APK download
-        const apkName = getUrlParam('apkName') || 'base';
-        const urlApkHost = getUrlParam('apkHost');
-        const finalApkHost = urlApkHost || apkHost;
-
-        if (!finalApkHost) {
+        const url = window.__apkDownloadUrl;
+        if (!url) {
           showToast('Download address is unavailable.');
           return;
         }
-
-        const url = finalApkHost + '/apkau/' + apkName + '.apk';
 
         if (url) {
           setTimeout(function() {
